@@ -1,5 +1,7 @@
 # 2920-A2-GridGame
-Grid based game that utilizes a quad tree
+Grid based game that utilizes a quad tree. All of my code is in the QuadTree class, the rest was given to us for the assignment.
+
+Assignment directions:
 
 In this assignment you will code the back-end for the grid game. You are given starter code in an intelliJ project in the A2-Grid directory. The GUI for the game is provided for you.
 
@@ -13,7 +15,7 @@ All of your code should go into the NestedGrid class - you'll implement all of t
 
 The following basic functionality should be implemented:
 
-moves - up down, clockwise, counter-clockwise. Each of the moves should move the selected square in the appropriate direction. ll of the moves are relative to the currently selected square, eg, move ccw should move the selected square to be the nearest sibling in the ccw direction. Down should move the selected square to now be the upper right child of the previously selected square. A
+moves - up down, clockwise, counter-clockwise. Each of the moves should move the selected square in the appropriate direction. ll of the moves are relative to the currently selected square, eg, move ccw should move the selected square to be the nearest sibling in the ccw direction. Down should move the selected square to now be the upper left child of the previously selected square. A
 
 smash - smash a block by augmenting it with 4 randomly colored children
 
