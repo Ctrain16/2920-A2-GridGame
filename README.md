@@ -7,16 +7,6 @@ The backend should be implemented as a QuadTree.
 
 At the base level of the game is the root (level 1) this occupies the whole screen. As you can see the root has 4 children: upper right, upper left, lower left and lower right. These are all at level 2, but then we also notice the lower left child of the root also has 4 children. The lower left has an upper right, and upper left a lower left and a lower right.
 
-See below the above example with colors:
-
-Flattened Tree:
-
-flattened tree
-
-Quad Tree drawing of the same tree:
-
-quad version
-
 In the game you'll have to keep track of the current cursor position (a yellow highlight around the block representing the current cursor position). You are provided a helper class called Rectangle which gives all the required attributes you must keep track of for a square in the game board to be rendered by the GUI. You'll need to provide the x,y position, the size, whether the square is visible, whether it is selected and for score keeping purposes how much of the square is touching the edge of the screen, along with the square's color.
 
 All of your code should go into the NestedGrid class - you'll implement all of the public methods. You may add other classes if you wish. But should not alter the other classes - unless you'd like to adjust the color scheme or add unit-tests, etc.
