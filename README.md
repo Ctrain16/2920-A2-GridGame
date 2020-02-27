@@ -1,5 +1,5 @@
 # 2920-A2-GridGame
-Grid based game that utilizes a quad tree. All of my code is in the QuadTree class, the rest was given to us for the assignment.
+Grid based game that utilizes a quad tree. All of my code is in the QuadTree class, the rest was given to my class for the assignment.
 
 Assignment directions:
 
