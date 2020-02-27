@@ -11,9 +11,9 @@ public class NestedGrid {
 
     /**
      *    |-----|-----|
-     *    |  UL |  UR |
+     *    |  TL |  TR |
      *    |-----+-----|
-     *    |  LL |  LR |
+     *    |  BL |  BR |
      *    |_____|_____|
      */
     public static final int MAX_SIZE = 512;
@@ -35,42 +35,30 @@ public class NestedGrid {
     /**
      * The selected square moves up to be its parent (if possible)
      */
-    public void moveUp() { }
+    public void moveUp() { quadTree.moveUp(); }
 
     /**
      * the selected square moves into the upper left child (if possible)
      * of the currently selected square
      */
-    public void moveDown(){ }
+    public void moveDown(){ quadTree.moveDown(); }
 
     /**
      * the selected square moves counter clockwise to a sibling
      */
-    public void moveLeft() { }
+    public void moveLeft() { quadTree.moveLeft(); }
 
     /**
      * Move the selected square to the next sibling clockwise
      */
-    public void moveRight() { }
+    public void moveRight() { quadTree.moveRight(); }
 
     /**
      * Return an array of the squares (as class Rectangle) to draw on the screen
      * @return
      */
     public Rectangle[] rectanglesToDraw ( ) {
-
-        QuadTree.Node node = quadTree.getRoot();
-
-
-
-
-        for(QuadTree.Node currentNode : tree){
-            Rectangle r = new Rectangle(currentNode.xCord, currentNode.yCord, currentNode.size, currentNode.color,
-                    currentNode.visible, currentNode.selected);
-            r.setBorderSize(currentNode.bordersize);
-            allBlocks.add(r);
-        }
-
+        ArrayList<Rectangle> allBlocks = quadTree.toRectangles();
         return allBlocks.toArray(new Rectangle[allBlocks.size()]);
     }
 
@@ -80,13 +68,13 @@ public class NestedGrid {
      * leave the selected square as the square that was just
      * smashed (it's just not visible anymore)
      */
-    public void smash() {}
+    public void smash() { quadTree.smash(); }
 
     /**
      * Rotate the descendants of the currently selected square
      * @param clockwise if true rotate clockwise, else counterclockwise
      */
-    public void rotate(boolean clockwise) { }
+    public void rotate(boolean clockwise) { quadTree.rotate(clockwise); }
 
     /**
      * flip the descendants of the currently selected square
@@ -94,6 +82,6 @@ public class NestedGrid {
      * @param horizontally if true then flip over the x-axis,
      *                     else flip over the y-axis
      */
-    public void swap (boolean horizontally) { }
+    public void swap (boolean horizontally) { quadTree.swap(horizontally); }
 
 }
